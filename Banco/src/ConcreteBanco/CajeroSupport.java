@@ -1,29 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ConcreteBanco;
 
 import SupportBanco.SupportBanco;
-import jdk.nashorn.internal.ir.RuntimeNode;
+import Bancooo.Request;
+import Bancooo.RequestType;
 
-/**
- *
- * @author ESTACION
- */
 public class CajeroSupport extends SupportBanco{
-     public CajeroSupport(){
-    super(RequestType.Cajero);
+   public CajeroSupport(){
+      super(RequestType.CAJERO);
     }
 
-     @Override
-    protected String getBancoName() {
+   @Override
+   protected void processRequest(Request request) {
+       System.out.println("Cajero procesó: "+ request.getDescription());
+    }
+
+   @Override
+   protected String getBancoName() {
        return "Cajero";
-    }
-
-     @Override
-    protected void processRequest(RuntimeNode.Request request) {
-       System.out.println("Cajero proceso"+request.getDescription());
-    }
-    
+   }
 }

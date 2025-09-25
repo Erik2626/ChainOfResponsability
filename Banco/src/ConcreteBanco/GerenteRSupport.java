@@ -1,29 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ConcreteBanco;
 
 import SupportBanco.SupportBanco;
-import jdk.nashorn.internal.ir.RuntimeNode;
+import Bancooo.Request; 
+import Bancooo.RequestType;
 
-/**
- *
- * @author ESTACION
- */
 public class GerenteRSupport extends SupportBanco{
-     public GerenteRSupport(){
-    super(RequestType.GerenteRegional);
+   public GerenteRSupport(){
+      super(RequestType.GERENTEREGIONAL);
     }
 
-     @Override
-    protected String getBancoName() {
-       return "Gerente Regional";
-    }
-
-     @Override
-        protected void processRequest(RuntimeNode.Request request) {
-       System.out.println("Gerente Regional proceso"+request.getDescription());
+   @Override
+   protected void processRequest(Request request) {
+       System.out.println("Gerente Regional procesó: "+ request.getDescription());
     }
     
+   @Override
+   protected String getBancoName() {
+       return "Gerente Regional";
+    }
 }
